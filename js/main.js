@@ -6,6 +6,13 @@ const toggleSpinner = displayStyle => {
 
 // searchbook function
 const searchBook = () => {
+     //clear total number of result area
+     const totalNum = document.getElementById('total-num');
+     totalNum.textContent = '';
+     //clear search result
+    const showResult = document.getElementById('search-result');
+    showResult.textContent = '';
+    //clear search input value
     const searchInput = document.getElementById('search-input');
     const searchText = searchInput.value;
     searchInput.value = '';
@@ -54,12 +61,12 @@ const searchResult = books => {
         div.classList.add = ('col');
         div.innerHTML = `
         <div class="card h-100">
-                <img height="300px" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg"  class="card-img-top" alt="...">
+                <img height="300px" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg"  class="card-img-top" alt="book cover">
                 <div class="card-body">
-                  <h5>Title: ${book.title}</h5>
-                  <h5>Author Name: ${book.author_name? book.author_name:'N/A'}</h5>
-                  <h5>Publishers: ${book.publisher? book.publisher:'N/A'}</h5>
-                  <h5>Published Year: ${book.first_publish_year}</h5>
+                  <h5>Title: <span>${book.title}</span></h5>
+                  <h5>Author: <span>${book.author_name? book.author_name:'N/A'}</span></h5>
+                  <h5>Publishers: <span>${book.publisher? book.publisher:'N/A'}</span></h5>
+                  <h5>Published Year: <span>${book.first_publish_year}</span></h5>
                   
                 </div>`
                 showResult.appendChild(div);

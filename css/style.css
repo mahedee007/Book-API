@@ -1,3 +1,15 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
 #spinner {
   display: none;
+}
+
+h5 {
+  color: black;
+  font-size: 1.5rem;
+}
+h5 span {
+  color: brown;
+  font-size: 1rem;
 }
